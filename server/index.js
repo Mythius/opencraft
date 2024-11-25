@@ -63,6 +63,7 @@ async function craftNewWord(firstWord, secondWord) {
     const __dirname = path.dirname(fileURLToPath(import.meta.url));
     const model = new LlamaModel({
         modelPath: path.join(__dirname, "models", "mistral-7b-instruct-v0.1.Q8_0.gguf"),
+        gpuLayers: 20
     });
     const context = new LlamaContext({model, seed: 0});
     const session = new LlamaChatSession({context});
